@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedfix Wolfsburg | Premium Smartphone Reparatur</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#070A13',
+                        cardBg: '#131B2E',
+                        neonBlue: '#3B82F6',
+                        neonPurple: '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-neonBlue selection:text-white">
+
+    <!-- Background Decorative Glowing Blobs -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-neonBlue/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-neonPurple/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-darkBg/75 backdrop-blur-md border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-neonBlue to-neonPurple bg-clip-text text-transparent">SPEEDFIX</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-400">
+                <a href="#services" class="hover:text-neonBlue transition-colors">Reparaturen</a>
+                <a href="#booking" class="hover:text-neonBlue transition-colors">Termin</a>
+                <a href="#kontakt" class="hover:text-neonBlue transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-5">
+                <a href="tel:+4915218549871" class="hidden sm:block text-sm font-semibold text-neonBlue hover:underline">+49 1521 8549871</a>
+                <a href="#booking" class="bg-gradient-to-r from-neonBlue to-neonPurple text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-neonBlue/20">Termin buchen</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Local Background Video -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background Container -->
+        <div class="absolute inset-0 w-full h-full">
+            <!-- Dark Overlay for better contrast -->
+            <div class="absolute inset-0 bg-darkBg/70 backdrop-blur-[2px] z-10"></div>
+            
+            <!-- Video tag with id="bgVideo" for JS control -->
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
+                <source src="{{ url_for('static', filename='hero.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Content Area -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 px-4 py-1.5 rounded-full text-xs font-medium text-slate-300 backdrop-blur-sm">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                ⭐ 4.7 Google Rating (153 Rezensionen)
+            </div>
+            <h1 class="text-4xl sm:text-7xl font-black tracking-tight leading-none text-white max-w-4xl mx-auto">
+                Ihr Smartphone <br>
+                <span class="bg-gradient-to-r from-neonBlue via-cyan-400 to-neonPurple bg-clip-text text-transparent">Express-Experte</span>
+            </h1>
+            <p class="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto backdrop-blur-[1px]">
+                Professionelle Reparatur für iPhone & Samsung in Wolfsburg. Displaywechsel, Akkutausch und mehr – schnell, zuverlässig und mit Garantie.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4 justify-center">
+                <a href="#services" class="bg-white text-darkBg px-8 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all shadow-lg text-base">Modelle anzeigen</a>
+                <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20f%C3%BCr%20eine%20Smartphone-Reparatur%20vereinbaren." target="_blank" class="bg-slate-900/90 border border-slate-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center gap-2 justify-center backdrop-blur-sm text-base">
+                    <svg class="w-5 h-5 fill-current text-emerald-500" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.79-4.024c1.6.95 3.567 1.45 5.561 1.451 5.556 0 10.077-4.516 10.08-10.073.001-2.693-1.04-5.225-2.93-7.119C17.608 2.342 15.08 1.3 12.39 1.3 6.83 1.3 2.31 5.818 2.306 11.376c-.001 2.0.525 3.953 1.523 5.689l-.999 3.648 3.737-.98c1.64 1.0 3.59 1.52 5.55 1.52h.003z"/></svg>
+                    WhatsApp Chat
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section id="services" class="py-20 bg-slate-900/20 relative z-10 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Reparatur-Modelle</h2>
+                <p class="text-slate-400 text-base sm:text-lg">Wählen Sie Ihr Gerät aus. Alle Preise inkl. zertifizierter Ersatzteile.</p>
+            </div>
+
+            <!-- Apple iPhone Grid -->
+            <div class="mb-20">
+                <div class="flex items-center gap-3 mb-10">
+                    <span class="text-2xl">🍏</span>
+                    <h3 class="text-2xl font-bold tracking-tight text-white">Apple iPhone</h3>
+                    <div class="h-[1px] bg-slate-800/80 flex-1 ml-4"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- iPhone 15 Pro -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonBlue/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='iph 15 pro.jpg') }}" alt="iPhone 15 Pro" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">iPhone 15 Pro</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonBlue shrink-0">ab 299€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonBlue shrink-0">ab 99€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20iPhone%2015%20Pro%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- iPhone 14 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonBlue/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='iph 14.jpg') }}" alt="iPhone 14" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">iPhone 14</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonBlue shrink-0">ab 199€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonBlue shrink-0">ab 89€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20iPhone%2014%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- iPhone 13 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonBlue/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='iph 13.jpg') }}" alt="iPhone 13" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">iPhone 13</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonBlue shrink-0">ab 159€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonBlue shrink-0">ab 79€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20iPhone%2013%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- iPhone 12 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonBlue/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='iph 12.jpg') }}" alt="iPhone 12" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">iPhone 12</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonBlue shrink-0">ab 129€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonBlue shrink-0">ab 69€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20iPhone%2012%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Samsung Galaxy Grid -->
+            <div>
+                <div class="flex items-center gap-3 mb-10">
+                    <span class="text-2xl">📱</span>
+                    <h3 class="text-2xl font-bold tracking-tight text-white">Samsung Galaxy</h3>
+                    <div class="h-[1px] bg-slate-800/80 flex-1 ml-4"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- S24 Ultra -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonPurple/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='s24.jpg') }}" alt="S24 Ultra" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">S24 Ultra</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonPurple shrink-0">ab 289€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonPurple shrink-0">ab 89€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20S24%20Ultra%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- Galaxy S23 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonPurple/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='s23.webp') }}" alt="Galaxy S23" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">Galaxy S23</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonPurple shrink-0">ab 189€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonPurple shrink-0">ab 79€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20Galaxy%20S23%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- Galaxy S22 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonPurple/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='s22.jpg') }}" alt="Galaxy S22" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">Galaxy S22</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonPurple shrink-0">ab 149€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonPurple shrink-0">ab 69€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20Galaxy%20S22%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                    <!-- Galaxy A54 -->
+                    <div class="group bg-cardBg/50 border border-slate-800 rounded-2xl p-6 hover:border-neonPurple/50 hover:-translate-y-2 transition-all duration-300 neon-glow flex flex-col justify-between">
+                        <div>
+                            <div class="bg-darkBg rounded-xl p-4 mb-4 flex justify-center border border-slate-800/50 h-44 items-center overflow-hidden">
+                                <img src="{{ url_for('static', filename='a54.jpg') }}" alt="Galaxy A54" class="max-h-36 max-w-full object-contain group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <h4 class="font-extrabold text-xl text-white mb-4">Galaxy A54</h4>
+                            <div class="space-y-2.5 text-sm text-slate-400 border-t border-slate-800/60 pt-4 mb-6">
+                                <div class="flex justify-between gap-4"><span>Displaywechsel:</span> <span class="font-bold text-neonPurple shrink-0">ab 119€</span></div>
+                                <div class="flex justify-between gap-4"><span>Akkutausch:</span> <span class="font-bold text-neonPurple shrink-0">ab 59€</span></div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20für%20Galaxy%20A54%20vereinbaren." target="_blank" class="block text-center bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 text-white group-hover:from-neonBlue group-hover:to-neonPurple py-3 rounded-xl font-bold text-sm transition-all">Reparatur buchen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-20 bg-darkBg relative z-10 border-t border-slate-800/80">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900/40 border border-slate-800 backdrop-blur-md p-8 sm:p-12 rounded-3xl relative overflow-hidden shadow-2xl">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-neonPurple/10 rounded-full blur-3xl"></div>
+                <div class="text-center mb-10 relative z-10">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Termin anfordern</h3>
+                    <p class="text-sm text-slate-400 mt-2">Schnell und unverbindlich eintragen. Wir bestätigen Ihren Termin sofort.</p>
+                </div>
+                <form class="space-y-6 relative z-10">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Name *</label>
+                            <input type="text" placeholder="Max Mustermann" required class="w-full bg-slate-950 px-4 py-3 border border-slate-800 rounded-xl focus:ring-2 focus:ring-neonBlue focus:border-neonBlue outline-none text-sm text-slate-200">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Telefonnummer *</label>
+                            <input type="tel" placeholder="+49 1521..." required class="w-full bg-slate-950 px-4 py-3 border border-slate-800 rounded-xl focus:ring-2 focus:ring-neonBlue focus:border-neonBlue outline-none text-sm text-slate-200">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">E-Mail-Adresse</label>
+                        <input type="email" placeholder="name@beispiel.de" class="w-full bg-slate-950 px-4 py-3 border border-slate-800 rounded-xl focus:ring-2 focus:ring-neonBlue focus:border-neonBlue outline-none text-sm text-slate-200">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Modell *</label>
+                            <select required class="w-full bg-slate-950 px-4 py-3 border border-slate-800 rounded-xl focus:ring-2 focus:ring-neonBlue focus:border-neonBlue outline-none text-sm text-slate-400 bg-slate-950">
+                                <option value="" class="bg-slate-950">Gerät wählen...</option>
+                                <option class="bg-slate-950">iPhone 15 Pro</option>
+                                <option class="bg-slate-950">iPhone 14</option>
+                                <option class="bg-slate-950">iPhone 13</option>
+                                <option class="bg-slate-950">iPhone 12</option>
+                                <option class="bg-slate-950">Samsung S24 Ultra</option>
+                                <option class="bg-slate-950">Samsung S23</option>
+                                <option class="bg-slate-950">Samsung S22</option>
+                                <option class="bg-slate-950">Samsung A54</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Schaden *</label>
+                            <select required class="w-full bg-slate-950 px-4 py-3 border border-slate-800 rounded-xl focus:ring-2 focus:ring-neonBlue focus:border-neonBlue outline-none text-sm text-slate-400 bg-slate-950">
+                                <option value="" class="bg-slate-950">Problem wählen...</option>
+                                <option class="bg-slate-950">Displaywechsel</option>
+                                <option class="bg-slate-950">Akkutausch</option>
+                                <option class="bg-slate-950">Ladeanschluss defekt</option>
+                                <option class="bg-slate-950">Wasserschaden</option>
+                                <option class="bg-slate-950">Sonstiges</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-neonBlue to-neonPurple text-white py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all shadow-xl shadow-neonBlue/20">Terminanfrage absenden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="py-12 bg-darkBg border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="w-full h-96 rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                <iframe
+                    src="https://maps.google.com/maps?q=Poststraße%204,%2038440%20Wolfsburg,%20Germany&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontakt" class="bg-slate-950 border-t border-slate-900/60 text-slate-400 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 pb-8 border-b border-slate-900">
+            <div class="space-y-3">
+                <span class="text-xl font-black bg-gradient-to-r from-neonBlue to-neonPurple bg-clip-text text-transparent">SPEEDFIX</span>
+                <p class="text-sm text-slate-500">Premium Express-Reparaturen in Wolfsburg. Qualität und Kundenzufriedenheit stehen bei uns an erster Stelle.</p>
+            </div>
+            <div class="space-y-2">
+                <h5 class="font-bold text-white text-sm uppercase tracking-wider">Kontakt</h5>
+                <p class="text-sm">📍 Poststraße 4, 38440 Wolfsburg</p>
+                <p class="text-sm">📞 +49 1521 8549871</p>
+            </div>
+            <div class="space-y-2">
+                <h5 class="font-bold text-white text-sm uppercase tracking-wider">Öffnungszeiten</h5>
+                <p class="text-sm">📅 Mo - Sa: 09:00 - 19:00 Uhr</p>
+                <p class="text-sm"> Schließung: Sonntag</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-center text-xs text-slate-600">
+            &copy; 2026 Speedfix Wolfsburg. Alle Rechte vorbehalten. | Developed by Simo
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/4915218549871?text=Hallo%20Speedfix%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20f%C3%BCr%20eine%20Smartphone-Reparatur%20vereinbaren." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-emerald-500 to-green-600 p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-200 group flex items-center justify-center"
+       title="Kontaktieren Sie uns auf WhatsApp">
+        <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.79-4.024c1.6.95 3.567 1.45 5.561 1.451 5.556 0 10.077-4.516 10.08-10.073.001-2.693-1.04-5.225-2.93-7.119C17.608 2.342 15.08 1.3 12.39 1.3 6.83 1.3 2.31 5.818 2.306 11.376c-.001 2.0.525 3.953 1.523 5.689l-.999 3.648 3.737-.98c1.64 1.0 3.59 1.52 5.55 1.52h.003z"/>
+        </svg>
+        <span class="absolute right-16 bg-slate-900 border border-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md">WhatsApp Kontakt</span>
+    </a>
+
+    <!-- JavaScript script to FORCE video autoplay on modern browsers -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('bgVideo');
+            if (video) {
+                var playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log("Video background playing smoothly!");
+                    }).catch(function(error) {
+                        console.log("Autoplay blocked by browser policy. Forcing play on click...");
+                        // If browser blocks it, it will play immediately when user clicks anywhere on screen
+                        document.body.addEventListener('click', function() {
+                            video.play();
+                        }, { once: true });
+                    });
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
